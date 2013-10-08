@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_sps_override_plugins().
+ *
+ * Provide some basic overrides for workflow modules.
+ */
+function revision_scheduler_sps_sps_override_plugins() {
+  return array(
+    'revision_scheduler_sps_override'=> array(
+      'class' => 'Drupal\revision_scheduler_sps\RevisionSchedulerOverride',
+      'condition' => 'date_condition',
+    ),
+  );
+}

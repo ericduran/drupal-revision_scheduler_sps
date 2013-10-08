@@ -1,0 +1,6 @@
+name = Revision Scheduler SPS Integration
+description = Integrates the SPS module with Revision Scheduler
+core = 7.x
+
+dependencies[] = sps
+dependencies[] = revision_scheduler
