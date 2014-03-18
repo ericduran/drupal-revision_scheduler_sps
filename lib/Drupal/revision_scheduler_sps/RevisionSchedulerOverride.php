@@ -26,6 +26,8 @@ class RevisionSchedulerOverride extends NodeDateOverride {
     $select = db_select('revision_scheduler', 'rs')
       ->fields('rs', array('id', 'entity_type', 'entity_id', 'revision_id'))
       ->condition('time_scheduled', $this->timestamp, '<=')
+      ->condition('time_scheduled', REQUEST_TIME, '>=')
+      ->condition('time_executed', 0)
       ->condition('operation', array(
         'publish',
         'workbench_moderation_to_published',
