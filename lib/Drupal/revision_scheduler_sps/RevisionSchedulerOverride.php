@@ -31,7 +31,8 @@ class RevisionSchedulerOverride extends NodeDateOverride {
       ->condition('operation', array(
         'publish',
         'workbench_moderation_to_published',
-        'queues_workbench_publish')
+        'queues_workbench_publish',
+        'dynamic_queue_workbench_publish')
       )
       ->orderBy('time_scheduled', 'ASC')
       ->orderBy('revision_id');
